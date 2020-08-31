@@ -2,21 +2,17 @@
 const { Model, DataTypes } = require('sequelize')
 const sequelize = require('../db')
 
-class Owner extends Model { }
+class Note extends Model { }
 
-Owner.init({
-  name: {
+Note.init({
+  title: {
     type: DataTypes.STRING,
     allowNull: false
   },
-  email: {
+  description: {
     type: DataTypes.STRING,
-    allowNull: false
-  },
-  phone: {
-    type: DataTypes.INTEGER,
     allowNull: false
   }
-})
+}, {sequelize, modelName: 'note'})
 
-module.exports = Owner
+module.exports = Note
