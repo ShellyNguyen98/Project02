@@ -1,3 +1,3 @@
 const Sequelize = require('sequelize')
 
-module.exports = new Sequelize(process.env.JAWSDB_URL || 'mysql://root:rootroot@localhost/horse_db')
+module.exports = new Sequelize (process.env.JAWSDB_URL || 'mysql://root:rootroot@localhost/ranchhand_db')
