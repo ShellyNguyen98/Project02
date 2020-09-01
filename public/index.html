@@ -1,36 +1,161 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
+	<head>
+		<title>Ranch-Hand</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/style.css" />
+	</head>
+	<body>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-  <link rel="stylesheet" href="./assets/style.css">
-</head>
+<!-- Header -->
+	<header id="header">
+		<div class="inner">
+			<a href="index.html" class="logo">Ranch-Hand</a>
+				<nav id="nav">
+					<a href="index.html">Home</a>
+					<a href="generic.html">Track</a>
+					<a href="elements.html">About Us</a>
+				</nav>
+			</div>
+			</header>
+			<a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
 
-<body>
-  <ul class="nav">
-    <li class="nav-item">
-      <a class="nav-link active" href="/">Main</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="/todo">Todo</a>
-    </li>
-  </ul>
+<!-- Banner -->
+	<section id="banner">
+		<div class="inner">
+			<h1>Ranch-Hand: <span>Welcome to our Ranch!</span></h1>
+				<ul class="actions">
+					<li><a href="#" class="button alt">Get Started</a></li>
+				</ul>
+		</div>
+	</section>
 
-  <script src="./assets/js/app.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-    crossorigin="anonymous"></script>
-</body>
+<!-- One -->
+	<section id="one">
+		<div class="inner">
+			<header>
+				<h2>Care for your horse, and your horse will care for you</h2>
+			</header>
+				<p>Here at our ranch, we know the value of a horse. If you stall with us, we will ensure that your horse will be taken care of the way you would care for yours!</p>
+		</div>
+	</section>
 
+<!-- Two -->
+	<section id="two">
+		<div class="inner">
+			<article>
+				<header>
+					<h2>Enter Horse's Information</h2>
+				</header>
+				<form method="post" action="#">
+					<div class="field ">
+						<label for="name">Horse's Name</label>
+						<input type="text" name="name" id="name" />
+					</div>
+					<div class="12u$">
+						<label for="name">Age</label>
+						<div class="select-wrapper">
+							<select name="demo-category" id="demo-category">
+								<option value="">- Choose gender  -</option>
+								 	<option value="1">Male</option>
+									<option value="1">Female</option>
+							</select>
+						</div>
+					</div>
+					<div class="field ">
+						<label for="name">Breed</label>
+						<input type="text" name="name" id="name" />
+					</div>
+					<div class="12u$">
+						<label for="name">Feed</label>
+						<div class="select-wrapper">
+							<select name="demo-category" id="demo-category">
+								<option value="">- Choose food  -</option>
+								 	<option value="1">Alfafa</option>
+									<option value="1">Rye grass</option>
+									<option value="1">Timothy Hay</option>
+									<option value="1">Orchard Grass Hay</option>
+							</select>
+						</div>
+					</div>
+					<div class="select-wrapper">
+						<select name="demo-category" id="demo-category">
+							<option value="">- Choose fruits  -</option>
+								 <option value="1">Apple</option>
+								<option value="1">Carrot</option>
+								<option value="1">Celery</option>
+						</select>
+					</div>
+					<div class="field ">
+						<label for="name">Enter Specific Needs</label>
+							<textarea name="demo-message" id="demo-message" placeholder="Enter message here" rows="6"></textarea>
+					</div>
+					<ul class="actions">
+						<li><input type="submit" value="Submit" class="alt" /></li>
+					</ul>
+				</form>
+			</article>
+		</div>
+	</section>
+
+<!-- Three -->
+<section>
+	<h3>Result!</h3>
+	<div class="table-wrapper">
+		<table class="alt">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Breed</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Item 1</td>
+					<td>Ante turpis integer aliquet porttitor.</td>
+				</tr>
+				<tr>
+					<td>Item 2</td>
+					<td>Vis ac commodo adipiscing arcu aliquet.</td>
+					
+				</tr>
+				<tr>
+					<td>Item 3</td>
+					<td> Morbi faucibus arcu accumsan lorem.</td>
+					
+				</tr>
+				<tr>
+					<td>Item 4</td>
+					<td>Vitae integer tempus condimentum.</td>
+					
+				</tr>
+				<tr>
+					<td>Item 5</td>
+					<td>Ante turpis integer aliquet porttitor.</td>
+					
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	</section>
+
+		<!-- Footer -->
+			<section id="footer">
+					<div class="copyright">
+						&copy; Untitled Design: <a href="https://templated.co/">TEMPLATED</a>
+						<p id="madeBy">Made by Maxwell, Benjamin, David, Shelly</p>
+					</div>
+			</section>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			
+  			<script src="./assets/js/app.js"></script>
+  			<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+	</body>
 </html>
