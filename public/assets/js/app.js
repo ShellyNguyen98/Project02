@@ -12,6 +12,18 @@ axios.get('/api/horses')
   })
   .catch(err => { console.log(err) })
 
-  document.getElementById('submit').addEventListener('click', event => {
-    
-  })
+document.getElementById('submit').addEventListener('click', event => {
+
+  let name = document.getElementById('name').value
+  let feedId = document.getElementById('feed').
+
+  
+
+
+
+  axios.post('/api/horses', {name, breed, age, })
+    .then(({data}) => {
+
+    })
+    .catch()
+})
