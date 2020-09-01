@@ -1807,24 +1807,24 @@
 
 /* Box */
 
-	.box {
-		border-radius: 0;
+	/* .box {
+		border-radius: 5;
 		border: solid 1px;
 		margin-bottom: 2em;
 		padding: 1.5em;
-	}
+	} */
 
-		.box > :last-child,
+		/* .box > :last-child,
 		.box > :last-child > :last-child,
 		.box > :last-child > :last-child > :last-child {
 			margin-bottom: 0;
-		}
-
+		} */
+/* 
 		.box.alt {
-			border: 0;
-			border-radius: 0;
-			padding: 0;
-		}
+			border: 5;
+			border-radius: 5;
+			padding: 5;
+		} */
 
 	.box {
 		border-color: #e5474b;
@@ -3777,6 +3777,6 @@
 
 		}
 
-		#madeBy .copyright {
+		#madeBy {
 			text-align: center;
 		}
