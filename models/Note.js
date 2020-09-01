@@ -9,7 +9,7 @@ Note.init({
     type: DataTypes.STRING,
     allowNull: false
   },
-  description: {
+  desc: {
     type: DataTypes.STRING,
     allowNull: false
   }

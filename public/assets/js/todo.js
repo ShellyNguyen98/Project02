@@ -223,6 +223,10 @@ addEventButton.onclick = function (e) {
   let title = document.getElementById("eventTitleInput").value.trim();
   let desc = document.getElementById("eventDescInput").value.trim();
 
+  axios.post('/api/notes', { title, desc })
+    .then(({ data }) => { console.log(data) })
+    .catch(err => { console.log(err) })
+
   if (!title || !desc) {
     document.getElementById("eventTitleInput").value = "";
     document.getElementById("eventDescInput").value = "";
@@ -248,5 +252,17 @@ addEventButton.onclick = function (e) {
   for (let i = 0; i < labels.length; i++) {
     labels[i].className = "";
   }
-
 }
+
+axios.get('/api/horses')
+  .then(({ data }) => {
+    console.log(data)
+    data.forEach(horse => {
+      let horseElem = document.createElement('option')
+      horseElem.value = horse.id
+      horseElem.textContent = horse.name
+      horseElem.className = 'dropdown-item'
+      document.getElementById('horseList').append(horseElem)
+    });
+  })
+  .catch(err => { console.log(err) })
