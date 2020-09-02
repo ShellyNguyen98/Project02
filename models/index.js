@@ -5,13 +5,13 @@ const Feed = require('./Feed.js')
 const Fruit = require('./Fruit.js')
 
 
-Horse.hasMany(Note)
-Horse.hasMany(Feed)
-Horse.hasMany(Fruit)
+// Note.hasMany(Horse)
+Feed.hasOne(Horse)
+Fruit.hasOne(Horse)
 
-Note.belongsTo(Horse)
-Feed.belongsTo(Horse)
-Fruit.belongsTo(Horse)
+// Horse.belongsTo(Note)
+Horse.belongsTo(Feed)
+Horse.belongsTo(Fruit)
 
 
 module.exports = { Horse, Note, Feed, Fruit }

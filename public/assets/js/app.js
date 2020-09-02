@@ -7,7 +7,6 @@ axios.get('/api/feeds')
       let feedElem = document.createElement('option')
       feedElem.value = feed.id
       feedElem.textContent = feed.name
-      feedElem.className = 'dropdown-item'
       document.getElementById('feedList').append(feedElem)
     });
   })
@@ -21,7 +20,6 @@ axios.get('/api/fruits')
       let fruitElem = document.createElement('option')
       fruitElem.value = fruit.id
       fruitElem.textContent = fruit.name
-      fruitElem.className = 'dropdown-item'
       document.getElementById('fruitList').append(fruitElem)
     });
   })

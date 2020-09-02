@@ -127,8 +127,10 @@ function addEvent(title, desc) {
 function showEvents() {
   let sidebarEvents = document.getElementById("sidebarEvents");
   let objWithDate = globalEventObj[selectedDate.toDateString()];
+  let noEventText = document.getElementById('noEventText')
 
-  sidebarEvents.innerHTML = "";
+
+  noEventText.innerHTML = ``;
 
   if (objWithDate) {
     let eventsCount = 0;
@@ -254,15 +256,32 @@ addEventButton.onclick = function (e) {
   }
 }
 
-axios.get('/api/horses')
+axios.get('/api/notes')
   .then(({ data }) => {
     console.log(data)
-    data.forEach(horse => {
-      let horseElem = document.createElement('option')
-      horseElem.value = horse.id
-      horseElem.textContent = horse.name
-      horseElem.className = 'dropdown-item'
-      document.getElementById('horseList').append(horseElem)
-    });
+    data.forEach(note => {
+      let noteElem = document.createElement('li')
+      noteElem.id = note.id
+      noteElem.className = "eventCard"
+      noteElem.innerHTML = `
+        <div class="eventCard-header">${note.title}</div>
+        <div class="eventCard-description">${note.desc} <br>
+        ${note.createdAt}</div>
+        <button class='btn btn-success takeAway'>Done</button>
+      `
+      document.getElementById('noteList').append(noteElem)
+    })
   })
   .catch(err => { console.log(err) })
+
+
+document.addEventListener('click', event => {
+  if (event.target.classList.contains('takeAway')) {
+    console.log(event.target.classList)
+    axios.delete(`/api/notes/${event.target.parentNode.id}`)
+      .then(() => {
+        event.target.parentNode.remove()
+      })
+      .catch(err => { console.log(err) })
+  }
+})
