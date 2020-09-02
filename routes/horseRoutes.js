@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const {Horse, Note, Owner} = require('../models')
+const {Horse, Feed, Fruit} = require('../models')
 
 //GET all horses
 router.get('/horses', (req, res) => {
@@ -10,7 +10,7 @@ router.get('/horses', (req, res) => {
 
 //GET one horse
 router.get('/horses/:id', (req, res) => {
-  Horse.findOne({where: {id: req.params.id}, include: [Owner, Note]})
+  Horse.findOne({where: {id: req.params.id}, include: [Feed, Fruit]})
     .then(horse => res.json(horse))
     .catch(err => console.log(err))
 })
