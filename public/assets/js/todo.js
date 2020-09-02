@@ -164,10 +164,10 @@ function showEvents() {
     let emptyFormMessage = document.getElementById("emptyFormTitle");
     emptyFormMessage.innerHTML = `${eventsCount} events now`;
   } else {
-    let emptyMessage = document.createElement("div");
-    emptyMessage.className = "empty-message";
-    emptyMessage.innerHTML = "Sorry, no events to selected date";
-    sidebarEvents.appendChild(emptyMessage);
+    // let emptyMessage = document.createElement("div");
+    // emptyMessage.className = "empty-message";
+    // emptyMessage.innerHTML = "Sorry, no events to selected date";
+    // sidebarEvents.appendChild(emptyMessage);
     let emptyFormMessage = document.getElementById("emptyFormTitle");
     emptyFormMessage.innerHTML = "No events now";
   }
@@ -260,7 +260,7 @@ axios.get('/api/notes')
   .then(({ data }) => {
     console.log(data)
     data.forEach(note => {
-      let noteElem = document.createElement('li')
+      let noteElem = document.createElement('div')
       noteElem.id = note.id
       noteElem.className = "eventCard"
       noteElem.innerHTML = `
