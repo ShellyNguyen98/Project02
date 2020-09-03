@@ -30,6 +30,7 @@ router.put('/fruits/:id', (req, res) => {
     .catch(err => console.log(err))
 })
 
+
 //DELETE one fruit item
 router.delete('/fruits/:id', (req, res) => {
   Fruit.destroy({where: {id: req.params.id}})

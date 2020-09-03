@@ -1,7 +1,9 @@
+
 const { Model, DataTypes } = require('sequelize')
 const sequelize = require('../db')
 
 class Feed extends Model { }
+
 
 Feed.init ({
     name:{
