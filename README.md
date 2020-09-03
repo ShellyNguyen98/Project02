@@ -26,7 +26,7 @@
   This application is covered by the None license.
 
   ## Contributing
-  Maxwell, Benjamin, David, Shelly, Calum
+  Maxwell, Benjamin, David, Shelly, Calum, Quinton
 
   ## Questions
    
