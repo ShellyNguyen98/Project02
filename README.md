@@ -1,6 +1,35 @@
-### Max in the house.
+#
+  <h1> Ranch-Hand App </h1>
 
-## change index html, pulling files from template01, add img and locate the files in the right folder.
+ ## Description
+ Creating an application for horse employees to keep track of daily tasks using Node, Express and backed by MySQL database, Sequelize ORM
+
+ # Table of Contents
+ - [Description](#description)
+ - [Installation](#installation)
+ - [Usage](#usage)
+ - [License](#license)
+ - [Contributing](#contributing)
+ - [Question](#userName)
+
+  ## Installation 
+  npm i express, sql2, sequelize, icon
+
+  ## Usage
+  Class
+
+  ## License
+  ![badge](https://img.shields.io/badge/license-None-blue.svg)<br/>
+  This application is covered by the None license.
+
+  ## Contributing
+  Maxwell, Benjamin, David, Shelly 
+
+  ## Questions
+   
 
 
-change table size, text center footer
+Find me on Github: [](https://github.com/ShellyNguyen98) <br />
+<br />
+Email me with any questions: ShellyNguyen98@gmail.com <br /><br />
+

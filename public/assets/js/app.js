@@ -36,12 +36,14 @@ document.getElementById('submit').addEventListener('click', event => {
     .then(({data}) => {
       console.log(data)
       let horseElem = document.createElement('tr')
+      horseElem.id = data.id
       horseElem.innerHTML = `
         <td>${data.name}</td>
         <td>${data.breed}</td>
         <td>${data.age}</td>
         <td>${document.getElementById('feed').options[document.getElementById('feed').selectedIndex].textContent}</td>
-        <td>${document.getElementById('fruit').options[document.getElementById('fruit').selectedIndex].textContent}</td>        
+        <td>${document.getElementById('fruit').options[document.getElementById('fruit').selectedIndex].textContent}</td>     
+        <td><button class="btn btn-danger remove">X</button></td>   
       `
       document.getElementById('horseTable').append(horseElem)
     })
@@ -50,16 +52,30 @@ document.getElementById('submit').addEventListener('click', event => {
 
 axios.get('/api/horses')
   .then(({data}) => {
+      console.log(data)
     data.forEach(horse => {
       let horseElem = document.createElement('tr')
+      horseElem.id = horse.id
       horseElem.innerHTML = `
-        <td>${data.name}</td>
-        <td>${data.breed}</td>
-        <td>${data.age}</td>
-        <td>${data.feed.name}</td>
-        <td>${data.fruit.name}</td>        
+        <td>${horse.name}</td>
+        <td>${horse.breed}</td>
+        <td>${horse.age}</td>
+        <td>${horse.feed.name}</td>
+        <td>${horse.fruit.name}</td>     
+        <td><button class="btn btn-danger remove">X</button></td>   
       `
       document.getElementById('horseTable').append(horseElem)
     })
   })
   .catch(err => { console.log(err) })
+
+  document.addEventListener('click', event => {
+    if (event.target.classList.contains('remove')) {
+      console.log(event.target.parentNode.parentNode)
+      axios.delete(`/api/horses/${event.target.parentNode.parentNode.id}`)
+        .then(() => {
+          event.target.parentNode.parentNode.remove()
+        })
+        .catch(err => { console.log(err) })
+    }
+  })
