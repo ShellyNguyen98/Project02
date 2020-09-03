@@ -4,6 +4,9 @@
  ## Description
  Creating an application for horse employees to keep track of daily tasks using Node, Express and backed by MySQL database, Sequelize ORM
 
+### Below is an example of what your application may look like:
+![Below is an example of what your application may look like](img/GIF.gif)
+
  # Table of Contents
  - [Description](#description)
  - [Installation](#installation)
