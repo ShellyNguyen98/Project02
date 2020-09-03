@@ -1,3 +1,4 @@
+
 axios.get('/api/feeds')
   .then(({ data }) => {
     console.log(data)
@@ -5,6 +6,7 @@ axios.get('/api/feeds')
       let feedElem = document.createElement('option')
       feedElem.value = feed.id
       feedElem.textContent = feed.name
+
       document.getElementById('feed').append(feedElem)
     });
   })
@@ -37,6 +39,7 @@ document.getElementById('submit').addEventListener('click', event => {
       console.log(data)
       let horseElem = document.createElement('tr')
       horseElem.id = data.id
+
       horseElem.innerHTML = `
         <td>${data.name}</td>
         <td>${data.breed}</td>
