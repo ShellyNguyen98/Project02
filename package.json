@@ -23,5 +23,6 @@
     "ionicons": "^5.1.2",
     "mysql2": "^2.1.0",
     "sequelize": "^6.3.4"
-  }
+  },
+  "devDependencies": {}
 }

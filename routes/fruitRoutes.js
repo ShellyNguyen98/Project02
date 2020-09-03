@@ -1,37 +1,39 @@
 const router = require('express').Router()
-const { Horse, Fruit } = require('../models')
+const {Horse, Fruit} = require('../models')
 
-//GET all Fruits
-router.get('/Fruits', (req, res) => {
+
+//GET all fruit choices
+router.get('/fruits', (req, res) => {
   Fruit.findAll()
-    .then(Fruits => res.json(Fruits))
+    .then(fruit => res.json(fruit))
     .catch(err => console.log(err))
 })
 
-//GET one Fruit
-router.get('/Fruits/:id', (req, res) => {
-  Fruit.findOne({ where: { id: req.params.id }, include: [Horse] })
-    .then(Fruit => res.json(Fruit))
+//GET one fruit item
+router.get('/fruits/:id', (req, res) => {
+  Fruit.findOne({where: {id: req.params.id}, include: [Horse]})
+    .then(fruit => res.json(fruit))
     .catch(err => console.log(err))
 })
 
-//POST one Fruit
-router.post('/Fruits', (req, res) => {
+//POST one fruit
+router.post('/fruits', (req, res) => {
   Fruit.create(req.body)
-    .then(Fruit => res.json(Fruit))
+    .then(fruit => res.json(fruit))
     .catch(err => console.log(err))
 })
 
-//PUT one Fruit
-router.put('/Fruits/:id', (req, res) => {
-  Fruit.update(req.body, { where: { id: req.params.id } })
+//PUT one fruit item
+router.put('/fruits/:id', (req, res) => {
+  Fruit.update(req.body, {where: {id:req.params.id}})
     .then(() => res.sendStatus(200))
     .catch(err => console.log(err))
 })
 
-//DELETE one Fruit
-router.delete('/Fruits/:id', (req, res) => {
-  Fruit.destroy({ where: { id: req.params.id } })
+
+//DELETE one fruit item
+router.delete('/fruits/:id', (req, res) => {
+  Fruit.destroy({where: {id: req.params.id}})
     .then(() => res.sendStatus(200))
     .catch(err => console.log(err))
 })

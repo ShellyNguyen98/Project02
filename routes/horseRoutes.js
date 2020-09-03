@@ -1,16 +1,16 @@
 const router = require('express').Router()
-const {Horse, Note} = require('../models')
+const {Horse, Feed, Fruit} = require('../models')
 
 //GET all horses
 router.get('/horses', (req, res) => {
-  Horse.findAll()
+  Horse.findAll({include: [Feed, Fruit]})
     .then(horses => res.json(horses))
     .catch(err => console.log(err))
 })
 
 //GET one horse
 router.get('/horses/:id', (req, res) => {
-  Horse.findOne({where: {id: req.params.id}, include: [Note]})
+  Horse.findOne({where: {id: req.params.id}, include: [Feed, Fruit]})
     .then(horse => res.json(horse))
     .catch(err => console.log(err))
 })
@@ -18,10 +18,13 @@ router.get('/horses/:id', (req, res) => {
 //POST one horse
 router.post('/horses', (req, res) => {
   Horse.create(req.body)
-    .then(horse => res.json(horse))
+    .then(horse => {
+      Horse.findOne({ where: {id:horse.id}, include:[Feed, Fruit]})
+        .then(wholeHorse => res.json(wholeHorse)) 
+        .catch(err => {console.log(err)})
+    })
     .catch(err => console.log(err))
 })
-
 //PUT one horse
 router.put('/horses/:id', (req, res) => {
   Horse.update(req.body, {where: {id:req.params.id}})
